@@ -19,7 +19,8 @@ html, body {
 nav {
     width: 100%;
     height: 50px;
-    background-color: #d3d3d3;
+    background-image: linear-gradient(to bottom right, #4776e6, #8e54e9);
+    
 }
 
 nav:nth-child(1) {
@@ -33,15 +34,16 @@ nav:nth-child(1) {
     color: white;
     font-size: 1.3em;
     float: right;
+    align-content: center;
 }
 
 .navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
     color: white;
     text-decoration: none;
-    padding: 5px;
+    padding: 10px;
     border-radius: 4px;
-    background-color: #d3d3d3;
     transition: background-color 0.4s ease;
+    
 }
 
 .navlink a:hover {
@@ -49,104 +51,29 @@ nav:nth-child(1) {
     background-color: #666d6f;
 }
 
-.domoForm {
-    border: 2px solid #d3d3d3;
-    height: 35px;
-    width: 700px;
-    margin-top:0px;
-    padding-top:10px;
-    background-color: #d3d3d3;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
+#makeWorkout{
+    
 }
 
-.domoForm label {
-    display: inline-block;
-    width: 75px;
-    margin-left: 10px;
-    font-size: 1.2em;
-    float: left;
-    color: white;
+.workout{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  display: flex;  
+  flex-direction: row;
+  margin-left: 600px;
+  margin-bottom: 25px;
+  width: 800px;
+  justify-content: space-around;
 }
 
-.domoForm input[type=text] {
-    float:left;
-}
-
-.makeDomoSubmit {
-    transition: background-color 0.4s ease;
-    display: inline;
-    width: 90px;
-    background-color: #666d6f;
-    border-radius: 2px;
-    color: white;
-    text-decoration: none;
-}
-
-.makeDomoSubmit:link, .makeDomoSubmit:visited, .makeDomoSubmit:hover, .makeDomoSubmit:active {
-    color: white;
-}
-
-.makeDomoSubmit:hover {
-    transition: background-color 0.4s ease;
-    background-color: #d3d3d3;
-}
-
-.mainForm {
-    height: 300px;
-    width: 350px;
-    margin: 0 auto;
-    padding-top: 350px;
-    font-size: 1.2em;
-}
-
-.mainForm h3 {
-    text-align: center;
-}
-
-.mainForm label {
-    display: inline-block;
-    width: 100px;
-    margin-right: 10px;
-    text-align: right;
-    font-size: 1.2em;
-}
-
-.formSubmit {
-    transition: background-color 0.4s ease;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 14px;
-    font-size: 1.2em;
-    width: 100px;
-    background-color: #666d6f;
-    border-radius: 2px;
-    border-color: #66acee;
-    padding: 3px 0px;
-    color: white;
-    text-decoration: none;
-}
-
-.formSubmit:link, .formSubmit:visited, .formSubmit:hover, .formSubmit:active {
-    color: white;
-}
-
-.formSubmit:hover {
-    transition: background-color 0.4s ease;
-    background-color: #d3d3d3;
-}
-
-#user, #pass, #pass2 {
-    text-align: center;
-    font-size: 1.1em;
-    width: 180px;
-    border-radius: 6px;
-}
-
-#user:focus, #pass:focus, #pass2:focus {
-    outline: none;
-    box-shadow: 0px 0px 1px 1px #666d6f;
+#img
+{
+/*border-radius: 50%;*/
+width: 100px;
+height: auto;
+padding-top: 100px;
+background: #f1f1f1;
+border-radius: 50%;
 }
 
 #domoMessage {
@@ -167,98 +94,306 @@ nav:nth-child(1) {
     left: 20px;
 }
 
-#speech {
-    height: 120px;
-    width: 250px;
-    z-index:300;
+#signPage {    
+    display: flex;  
+    flex-direction: row;  /* make main axis vertical */
 }
 
-#errorMessage {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: red;
-    font-style: italic;
+#container {    
+    display: flex;  
+    flex-direction: row;  /* make main axis vertical */
 }
 
-#domo {
-    z-index: 225;
-    margin-top: -20px;
-    margin-left: 135px;
-    height: 450px;
-    width: 300px;
-    -ms-transform: rotate(330deg);
-    -webkit-transform: rotate(330deg); 
-    transform: rotate(330deg);
+#link {
+    background-image: linear-gradient(to bottom right, #4776e6, #8e54e9);
+    display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center;
+    width: 30vw;
+    height: 100vh;
+    float: left;
 }
 
-#domos {
-    width: 40%;
-    min-width: 400px;
-    border: 2px solid #666d6f;
-    border-radius: 4px;
-    margin: 0 auto;
-    margin-top: 100px;
+#side {
+    background-image: linear-gradient(to bottom right, #4776e6, #8e54e9);
+    display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center;
+    width: 30vw;
+    height: 100vh;
+    float: left;
 }
 
-.domo {
-    width: 95%;
-    margin: 0 auto;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    border: 2px solid #666d6f;
-    border-radius: 4px;
-    background-color: #666d6f;
+.stats {
+    display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+    height: 100vh;
+    width: 70vw;
+/*   float: right;*/
+}
+
+#bmicard {
+  background-color: #f1f1f1;
+  border: none;
+  color: black;
+  padding: 15px 50px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-top: 30px;
+  border-radius: 40px;
+}
+
+#sig {
+    background-image: linear-gradient(to bottom right, #4776e6, #8e54e9);
+    display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+    height: 100vh;
+    width: 30vw;
+    background-color: blue;
+}
+
+
+
+#signup {
+    display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+    height: 100vh;
+    width: 70vw;
+    float: right;
+}
+
+#loginPage {    
+    display: flex;  
+    flex-direction: row;  /* make main axis vertical */
+}
+
+
+#log {
+    background-image: linear-gradient(to bottom right, #4776e6, #8e54e9);
+   display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+    height: 100vh;
+    width: 30vw;
+}
+
+#login {
+    display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+    height: 100vh;
+    width: 70vw;
+    float: right;
+}
+
+#loginForm {
+    display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
     padding: 10px;
-    min-height:60px;
-    overflow: hidden;
+    
 }
 
-.domo:hover {
-    transition: border-color 0.2s ease-out;
-    border-color: rgba(255,255,255, 0.8);
-    transition: background-color 2.6s ease-out;
-    background-color: #666d6f;
+#signupForm {
+    display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+    padding: 10px;
+    
 }
 
-img.domoFace {
-    margin-left: 25px;
-    margin-right: 10px;
-    height: 50px;
-    width: 50px;
-    border-radius: 4px;
-    margin-top:10px;
-    float:left;
+#user{
+     width: 300px;
+     padding: 15px;
+     margin-bottom: 15px;
+     border: none;
+     background-color: #f3f3f3;
+     font-size: 16px;
 }
 
-h3.emptyDomo {
-    width: 400px;
-    font-size: 1.5em;
-    margin: 0 auto;
+#pass{
+    width: 300px;
+    padding: 15px;
+    border: none;
+    margin-bottom: 15px;
+    background-color: #f3f3f3;
+    font-size: 16px;
+
+}
+
+#pass2{
+    width: 300px;
+    padding: 15px;
+    border: none;
+    background-color: #f3f3f3;
+    font-size: 16px;
+
+}
+
+.formSubmit{
+  background-image: linear-gradient(to bottom right, #4776e6, #8e54e9);
+  border: none;
+  color: white;
+  padding: 15px 50px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-top: 30px;
+  border-radius: 50px;
+}
+
+a { 
+    text-decoration: none;
+}
+
+#sign {
+  border: 2px;
+  color: white;
+  padding: 15px 50px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-top: 30px;
+  border-radius: 50px;
+}
+
+#stats{
+    display: flex;  
+    flex-direction: column;
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+    margin-top: 20px;
+}
+
+#statsForm{
+    display: flex;  
+    flex-direction: column;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;
+    padding: 10px;
+}
+
+#fill{
+    display: flex;  
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+#workoutAge{
+     width: 300px;
+     padding: 15px;
+     margin-bottom: 15px;
+     border: none;
+     background-color: #f3f3f3;
+     font-size: 16px;
+}
+
+#workoutName{
+     width: 275px;
+     padding: 15px;
+     margin-bottom: 15px;
+     border: none;
+     background-color: #f3f3f3;
+     font-size: 16px;
+}
+
+.workoutName{
+   float: left;
+}
+
+.workoutSets{
+    float: right;
+}
+
+.workoutReps{
+    float: right;
+}
+
+#workoutReps{
+     width: 275px;
+     padding: 15px;
+     margin-bottom: 15px;
+     border: none;
+     background-color: #f3f3f3;
+     font-size: 16px;
+}
+
+#workoutSets{
+     width: 275px;
+     padding: 15px;
+     margin-bottom: 15px;
+     border: none;
+     background-color: #f3f3f3;
+     font-size: 16px;
+}
+#statsAge{
+     width: 300px;
+     padding: 15px;
+     margin-bottom: 15px;
+     border: none;
+     background-color: #f3f3f3;
+     font-size: 16px;
+}
+
+#statsName{
+     width: 300px;
+     padding: 15px;
+     margin-bottom: 15px;
+     border: none;
+     background-color: #f3f3f3;
+     font-size: 16px;
+}
+#statsHeight{
+     width: 300px;
+     padding: 15px;
+     margin-bottom: 15px;
+     border: none;
+     background-color: #f3f3f3;
+     font-size: 16px;
+}
+
+#statsWeight{
+     width: 300px;
+     padding: 15px;
+     margin-bottom: 15px;
+     border: none;
+     background-color: #f3f3f3;
+     font-size: 16px;
+}
+
+label{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.makeStatsSubmit{
+  background-image: linear-gradient(to bottom right, #4776e6, #8e54e9);
+  border: none;
+  color: white;
+  padding: 15px 50px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50px;
+}
+
+.stats{
+    float: right;
+}
+
+#logoutbutton{
+    color: white;
     text-align: center;
-    margin-top: 18px;
-}
-
-h3.domoName {
-    float:left;
-    width: 200px;
-    font-weight: bold;
-    padding-left: 65px;
-    font-size: 1.5em;
-}
-
-h3.domoAge {
-    float:right;
-    text-align: left;
-    width: 100px;
-    font-weight: bold;
-    padding-right: 40px;
-    font-size: 1.5em;
-}
-
-.domo:first-child {
-    margin-top: 10px;
-}
-
-.domo:last-child {
-    margin-bottom:10px;
+    margin-top: 40px;
 }

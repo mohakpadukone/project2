@@ -2,7 +2,7 @@
 
 var handleError = function handleError(message) {
   $("#errorMessage").text(message);
-  $("#domoMessage").animate({ width: 'toggle' }, 350);
+  //$("#domoMessage").animate({ width: 'toggle' }, 350);
 };
 
 var sendAjax = function sendAjax(action, data) {
@@ -13,7 +13,7 @@ var sendAjax = function sendAjax(action, data) {
     data: data,
     dataType: "json",
     success: function success(result, status, xhr) {
-      $("#domoMessage").animate({ width: 'hide' }, 350);
+//$("#domoMessage").animate({ width: 'hide' }, 350);
 
       window.location = result.redirect;
     },
@@ -29,7 +29,7 @@ $(document).ready(function () {
   $("#signupForm").on("submit", function (e) {
     e.preventDefault();
 
-    $("#domoMessage").animate({ width: 'hide' }, 350);
+    //$("#domoMessage").animate({ width: 'hide' }, 350);
 
     if ($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
       handleError("RAWR! All fields are required");
@@ -49,7 +49,7 @@ $(document).ready(function () {
   $("#loginForm").on("submit", function (e) {
     e.preventDefault();
 
-    $("#domoMessage").animate({ width: 'hide' }, 350);
+    //$("#domoMessage").animate({ width: 'hide' }, 350);
 
     if ($("#user").val() == '' || $("#pass").val() == '') {
       handleError("RAWR! Username or password is empty");
@@ -61,18 +61,35 @@ $(document).ready(function () {
     return false;
   });
 
-  $("#domoForm").on("submit", function (e) {
+  $("#workoutForm").on("submit", function (e) {
     e.preventDefault();
 
-    $("#domoMessage").animate({ width: 'hide' }, 350);
+    //$("#domoMessage").animate({ width: 'hide' }, 350);
 
-    if ($("#domoName").val() == '' || $("#domoAge").val() == '') {
+    if ($("#workoutName").val() == '' || $("#workoutSets").val() == '' || $("#workoutReps").val() == '') {
       handleError("RAWR! All fields are required");
       return false;
     }
 
-    sendAjax($("#domoForm").attr("action"), $("#domoForm").serialize());
+    sendAjax($("#workoutForm").attr("action"), $("#workoutForm").serialize());
 
     return false;
   });
+    
+  $("#statsForm").on("submit", (e) => {
+    e.preventDefault();
+
+    //$("#domoMessage").animate({width:'hide'},350);
+
+    if($("#statsName").val() == '' || $("#statsAge").val() == '' || $("#statsHeight").val() == '' || $("#statsWeight").val() == '') {
+      handleError("RAWR! All fields are required");
+      return false;
+    }
+
+    sendAjax($("#statsForm").attr("action"), $("#statsForm").serialize());
+
+    return false;
+  });
+    
+ 
 });

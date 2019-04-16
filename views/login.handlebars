@@ -8,23 +8,31 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body> 
-  <nav><a href="/login"></a>
-    <div class="navlink"><a href="/login">Login</a></div>
-    <div class="navlink"><a href="/signup">Sign up</a></div>
-  </nav>
+   <section id="loginPage">
+  <section id="log">
+    <h1>Create an account</h1>
+    <p>Start tracking your workouts</p>
+    <a href="/signup">
+        <div id="sign">SIGN UP</div>
+      </a>
+ </section>
+    
   <section id="login">
+    <h1>Sign in to app</h1>
+    <p>Enter username and passowrd</p>
     <form id="loginForm" name="loginForm" action="/login" method="POST" class="mainForm">
-      <label for="username">Username: </label>
-      <input id="user" type="text" name="username" placeholder="username"/>
-      <label for="pass">Password: </label>
-      <input id="pass" type="password" name="pass" placeholder="password"/>
+      
+      <input id="user" type="text" name="username" placeholder="Username"/>
+     
+      <input id="pass" type="password" name="pass" placeholder="Password"/>
       <input type="hidden" name="_csrf" value={{csrfToken}} />
-      <input class="formSubmit" type="submit" value="Sign In" />
+      <input class="formSubmit" type="submit" value="SIGN IN" />
     </form>
   </section>
   <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
     <h3><span id="errorMessage">Wrong username or password</span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
   </div>
+  </section>
   <script src="/assets/bundle.js"></script>
 </body>
 </html>

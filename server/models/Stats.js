@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
-let DomoModel = {};
+let StatsModel = {};
 
 // mongoose.Types.ObjectiD is a func that
 // conveerts string isd to real mongo id
 const convertId = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 
-const DomoSchema = new mongoose.Schema({
+const StatsSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -18,6 +18,18 @@ const DomoSchema = new mongoose.Schema({
   },
 
   age: {
+    type: Number,
+    min: 0,
+    required: true,
+  },
+
+  weight: {
+    type: Number,
+    min: 0,
+    required: true,
+  },
+
+  height: {
     type: Number,
     min: 0,
     required: true,
@@ -35,20 +47,22 @@ const DomoSchema = new mongoose.Schema({
   },
 });
 
-DomoSchema.statics.toAPI = (doc) => ({
+StatsSchema.statics.toAPI = (doc) => ({
   name: doc.name,
   age: doc.age,
+  weight: doc.weight,
+  height: doc.height,
 });
 
-DomoSchema.statics.findByOwner = (ownerId, callback) => {
+StatsSchema.statics.findByOwner = (ownerId, callback) => {
   const search = {
     owner: convertId(ownerId),
   };
 
-  return DomoModel.find(search).select('name age').exec(callback);
+  return StatsModel.find(search).select('name age height weight').exec(callback);
 };
 
-DomoModel = mongoose.model('Domo', DomoSchema);
+StatsModel = mongoose.model('Stats', StatsSchema);
 
-module.exports.DomoModel = DomoModel;
-module.exports.DomoSchema = DomoSchema;
+module.exports.StatsModel = StatsModel;
+module.exports.StatsSchema = StatsSchema;
